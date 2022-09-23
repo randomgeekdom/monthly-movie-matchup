@@ -20,7 +20,7 @@
     <p>None selected yet.</p>
   </div>
   <div v-else>
-    <p>{{ selections.length }} / 10</p>
+    <p>{{ selections.length }} / 9</p>
     <div class="row" v-for="movie in Selections()" v-bind:key="movie.id">
       <button
         class="btn btn-sm btn-outline-primary"
@@ -114,7 +114,7 @@ export default defineComponent({
     SelectMovie(movie: { title: string; image: string; cost: number }) {
       if (
         movie.cost > this.RemainingPicpoints() ||
-        this.selections.length >= 10
+        this.selections.length >= 9
       ) {
         return;
       }
